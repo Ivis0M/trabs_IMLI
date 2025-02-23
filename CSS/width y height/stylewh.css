@@ -1,0 +1,19 @@
+div {
+    background:aqua;
+    width: 300px;
+    height: 200px; 
+}
+p {
+    text-align: center;
+}
+h1 {
+    background: violet;
+    text-align: center;
+
+}
+input {
+    width:100%;
+    background:black;
+    font-family: sans-serif;
+}
+
