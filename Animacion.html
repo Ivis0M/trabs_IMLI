@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+    <style>
+        body{
+            background-image:url(https://somoskudasai.com/wp-content/uploads/2021/01/bg03.jpg) ;
+            background-repeat: no-repeat;
+            background-size:110% ;
+            position: relative;
+        }
+        .tanjiro{
+            height: 600px;
+            width: 370px;
+            position: absolute;
+            left: -50px;
+            top: 370px;
+            animation-name: mover;
+            animation-duration:4s;
+            
+        }
+        .tanjiro2{
+            height: 600px;
+            width: 670px;
+            position: absolute;
+            left: 1350px;
+            opacity: 0;
+            animation-name: aparecer;
+            animation-duration:6s;
+        }
+        .muzan{
+            height: 600px;
+            width: 650px;
+            position: absolute;
+            top: 370px;
+            left: 1300px;
+            animation-name: desaparecer;
+            animation-duration:3s;
+            animation-fill-mode: forwards;
+        }
+        .sangre{
+            height: 200px;
+            width: 250px;
+            position: absolute;
+            top: 430px;
+            left: 1500px;
+            opacity: 0;
+            animation-name: sangre;
+            animation-duration:5s;
+            
+
+        }
+        @keyframes desaparecer{
+            90%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        @keyframes sangre {
+            50%{opacity: 0;}
+            60%{opacity:1.6;}
+        }
+        @keyframes aparecer{
+            40%{opacity: 0;}
+            45%{opacity: 0.8;}
+
+            100%{opacity: 0;}
+        }
+        @keyframes mover{
+            
+
+            50%{left: 500px;
+            top: 200px;
+            opacity: 1;}
+            
+            70%{left: 1240px;
+                opacity: 0;
+                top: 100px;}
+
+            100%{left: 1240px;
+            opacity: 0;
+            top: 100px;}
+        }
+    </style>
+</head>
+<body>
+    <img class="tanjiro2" src="https://preview.redd.it/saw-new-tanjiro-matchup-feel-like-doing-tanjiro-list-now-v0-trniy79re8ub1.png?width=1080&crop=smart&auto=webp&s=eef805b7b6ded62e45ce0c26a0b4d2afa46ec5f2">
+    <img class="tanjiro" src="https://media.gamestop.com/i/gamestop/20003188/FiGPiN-Demon-Slayer-Kimetsu-no-Yaiba-Tanjiro-Kamado-3-in-Collectible-Enamel-Pin">
+    <img class="muzan" src="https://wibu.com.vn/wp-content/uploads/2024/04/Kibutsuji-Muzan.png">
+    <img class="sangre" src="https://png.pngtree.com/png-vector/20241030/ourmid/pngtree-red-blood-splatter-overlay-design-png-image_14184985.png">
+</body>
+</html>
