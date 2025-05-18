@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 200px 150px 150px 200px;
+            gap: 20px;
+            grid-template-areas: 
+                "d1 d2 d3"
+                "d4 d2 d5"
+                "d6 d7 d5"
+                "d6 d7 d8 ";
+        }
+        .d1{
+            height: 200px;
+            width: 200px;
+            background-color:darkred;
+            border: 13px white solid;
+            grid-area: d1;
+        }
+        .d2{
+            height: 450px;
+            width: 200px;
+            background-color:skyblue;
+            border: 13px white solid;
+            grid-area: d2;
+        }
+        .d3{
+            height: 300px;
+            width: 200px;
+            background-color:aquamarine;
+            border: 13px white solid;
+            grid-area: d3;
+        }
+        .d4{
+            height: 170px;
+            width: 200px;
+            background-color:rgb(240, 240, 123);
+            border: 13px white solid;
+            grid-area: d4;
+        }
+        .d5{
+            height: 270px;
+            width: 200px;
+            background-color:greenyellow;
+            border: 13px white solid;
+            grid-area: d5;
+            margin-top: 100px;
+        }
+        .d6{
+            height: 330px;
+            width: 200px;
+            background-color:blue;
+            border: 13px white solid;
+            margin-top: 20px;
+            grid-area: d6;
+        }
+        .d7{
+            height: 270px;
+            width: 200px;
+            background-color:cornflowerblue;
+            border: 13px white solid;
+            grid-area: d7;
+            margin-top: 80px;
+        }
+        .d8{
+            height: 130px;
+            width: 200px;
+            background-color:purple;
+            border: 13px white solid;
+            margin-top: 50px;
+            grid-area: d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <div class="d4"></div>
+        <div class="d5"></div>
+        <div class="d6"></div>
+        <div class="d7"></div>
+        <div class="d8"></div>
+    </div>
+</body>
+</html>
