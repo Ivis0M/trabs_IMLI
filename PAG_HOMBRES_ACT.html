@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMLF | Estilos de Ropa para hombre </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="logopestaña.jpeg" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat";
+    }
+    nav{
+        background-color:rgb(236, 228, 228) ;
+        padding: 30px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;   
+    }
+    .menu{
+        display: flex;
+        gap: 20px;
+    }
+    .iconos{
+        display: flex;
+        gap: 15px;
+    }
+    ul{
+        list-style: none;
+    }
+    li{
+        display: inline-block ;
+        margin-right: 20px;
+        transition: all 0.2s ease;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    img{
+        width: 200px;
+        object-fit: cover;  
+    }
+    .logo{
+        float: left;
+        overflow: hidden;
+        
+    }
+    .cat{
+        font-size: 20px;
+    }
+
+    .cat:hover{
+        transform: scale(1.1);
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    .icono-perfil{
+        float:right;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        
+    }
+    .icono-lupa{
+        float:right;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+    }
+    .icono-perfil:hover{
+        transform: scale(1.1);
+    }
+    
+
+    .icono-perfil:hover .login {
+        display: block;
+    }
+    .login {
+        display: none;
+        top: 23px;
+        right: 0;
+        background-color: rgb(185, 181, 181);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 16px black;
+        width: 250px;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    .login h5 {
+        color: black;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+    }
+
+    .login input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .login button {
+        width: 100%;
+        padding: 8px;
+        background-color: #000000;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .login button:hover {
+        background-color: #b7c0b9;
+        color: black;
+    }
+
+
+    .container-imgp1{
+        width: 100vw;
+        height: 60vh;
+    }
+    .container-imgp1 img{
+        width: 100vw;
+        height: 60vh;
+        
+    }
+    .novs{
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat";
+        font-size: larger;
+    }
+    .novs h2{
+        font-size: 30px;
+    }
+    .novedades-cats{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "noved1 noved2"
+        "noved3 noved4"
+        "noved5 noved6"; 
+        gap: 1.5px;
+        
+    }
+    .noved1{
+        grid-area: noved1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        
+    }
+    .noved1:hover{
+        transform: scale(1.01);
+        transition: all 1s ease;
+    }
+    .noved1 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        
+    }
+    h3{
+        position: relative;
+        color:whitesmoke;
+        font-family:"Montserrat";
+        font-weight: 500;
+        font-size:18px; 
+        
+    }
+    .noved2{
+        grid-area: noved2;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .noved2:hover{
+        transform: scale(1.01);
+        transition: all 1s ease
+    }
+    .noved2 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        
+    }
+    .noved3{
+        grid-area: noved3;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .noved3:hover{
+        transform: scale(1.01);
+        transition: all 1s ease
+    }
+    .noved3 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        
+    }
+    .noved4{
+        grid-area: noved4;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .noved4:hover{
+        transform: scale(1.01);
+        transition: all 1s ease
+    }
+    .noved4 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        
+    }
+    .noved5{
+        grid-area: noved5;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .noved5:hover{
+        transform: scale(1.01);
+        transition: all 1s ease
+    }
+    .noved5 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        
+    }
+    .noved6{
+        grid-area: noved6;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .noved6:hover{
+        transform: scale(1.01);
+        transition: all 1s ease
+    }
+    .noved6 img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .na{
+        width: 100vw;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .na h2{
+        font-size: 30px;
+    }
+    .ckpag{
+        width: 100vw;
+        height: 60vh;
+        padding-top: 20px;
+        background-color: #EFEFF0;;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "ckpag1"
+        "ckpag2";
+    }
+    .ckpag1{
+        padding-left: 50px;
+        font-size: 26px;
+        grid-area: ckpag1;
+    }
+    .ckpag1 h3{
+        color: black;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .ckpag1 a{
+        font-size: 26px;
+        font-weight: bolder;
+    }
+    .ckpag2{
+        grid-area: ckpag2;
+    }
+    .ckpag2 img{
+        width: 100%;
+        height: 30vh;
+    }
+    .na2{
+        width: 100vw;
+        height: 10vh;
+    }
+    .lapag{
+        width: 100vw;
+        height: 60vh;
+        padding-top: 20px;
+        background-color: #F2C13C;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "ckpag1"
+        "ckpag2";
+    }
+    .lapag1{
+        padding-left: 50px;
+        font-size: 26px;
+        grid-area: ckpag1;
+    }
+    .lapag1 h3{
+        color: black;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .lapag1 a{
+        font-size: 26px;
+        font-weight: bolder;
+    }
+    .lapag2{
+        grid-area: ckpag2;
+    }
+    .lapag2 img{
+        width: 100%;
+        height: 30vh;
+    }
+
+    .na3{
+        width: 100vw;
+        height: 10vh;
+    }
+    .popag{
+        width: 100vw;
+        height: 70vh;
+        padding-top: 5px;
+        color: white;
+        background-color: #23395b;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "ckpag2"
+        "ckpag1";
+        
+    }
+    .popag1{
+        padding-top: 30px;
+        padding-left: 50px;
+        font-size: 26px;
+        grid-area: ckpag1;
+    }
+    .popag1 h3{
+        color: white;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .popag1 a{
+        font-size: 26px;
+        font-weight: bolder;
+        color: white;
+    }
+    .popag2{
+        grid-area: ckpag2;
+    }
+    .popag2 img{
+        width: 100%;
+        height: 35vh;
+    }
+    .na4{
+        width: 100vw;
+        height: 10vh;
+    }
+    .tmpag{
+        width: 100vw;
+        height: 70vh;
+        padding-top: 5px;
+        color: white;
+        background-color:#c0392b ;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "ckpag2"
+        "ckpag1";
+        
+    }
+    .tmpag1{
+        padding-top: 30px;
+        padding-left: 50px;
+        font-size: 26px;
+        grid-area: ckpag1;
+    }
+    .tmpag1 h3{
+        color: white;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .tmpag1 a{
+        font-size: 26px;
+        font-weight: bolder;
+        color: white;
+    }
+    .tmpag2{
+        grid-area: ckpag2;
+    }
+    .tmpag2 img{
+        width: 100%;
+        height: 35vh;
+    }
+    .na5{
+        width: 100vw;
+        height: 10vh;
+    }
+    .hbpag{
+        width: 100vw;
+        height: 70vh;
+        padding-top: 5px;
+        color: white;
+        background-color:#000000 ;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "ckpag2"
+        "ckpag1";
+        
+    }
+    .hbpag1{
+        padding-top: 30px;
+        padding-left: 50px;
+        font-size: 26px;
+        grid-area: ckpag1;
+    }
+    .hbpag1 h3{
+        color: white;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .hbpag1 a{
+        font-size: 26px;
+        font-weight: bolder;
+        color: white;
+    }
+    .hbpag2{
+        grid-area: ckpag2;
+    }
+    .hbpag2 img{
+        width: 100%;
+        height: 35vh;
+    }
+    .final{
+        width: 100vw;
+        height: 50vh;
+        padding-top: 5px;
+        color: gray solid;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "recursos"
+        "ayuda"
+        "empresa";
+    }
+    .caja recursos{
+        grid-area: recursos;
+    }
+    .caja ayuda{
+        grid-area: ayuda;
+    }
+    .caja empresa{
+        grid-area:empresa ;
+    }
+    .caja{
+        padding: 50px;
+    }
+
+    ul{
+        margin: 15px 0;
+    }
+    
+    a:hover{
+        transition: all 0.5 ease;
+        transform: scale(1.012);
+        font-weight: bolder;
+    }
+
+    @media screen and (min-width:768px){ 
+        h3{
+            font-size: 32px;
+        }
+
+        .final{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr ;
+            grid-template-areas:
+            "recursos empresa"
+            "ayuda";
+        }
+    }
+    @media screen and (min-width:1024px){
+        .novedades-cats{
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "noved1 noved2 noved3 noved4 noved5 noved6 ";
+        }
+        .ckpag{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "ckpag1 ckpag2";
+        }
+        .ckpag2 img{
+            width: 60vw;
+            height: 50vh;
+        }
+
+        .lapag{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "ckpag1 ckpag2";
+        }
+        .lapag2 img{
+            width: 60vw;
+            height: 50vh;
+        }
+
+        .popag{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "ckpag1 ckpag2";
+        }
+        .popag2 img{
+            width: 60vw;
+            height: 50vh;
+            padding-top: 20px;
+        }
+        .tmpag{
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "ckpag1 ckpag2";
+        }
+        .tmpag2 img{
+            width: 60vw;
+            height: 50vh;
+            padding-top: 20px;
+        }
+        .hbpag{
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "ckpag1 ckpag2";
+        }
+        .hbpag2 img{
+            width: 60vw;
+            height: 50vh;
+            padding-top: 20px;
+        }
+        .final{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr ;
+            grid-template-areas:
+            "recursos empresa ayuda";
+        }
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="paginaprincipal.html"><img src="logotipo2.png"></a>
+        </div>
+
+        <ul class="menu">
+            <li class="cat mujer" ><a  href="#">Hombre</a></li>
+            <li>|</li>
+            <li class="cat hombre"  ><a href="#">Mujer</a></li>
+            <li>|</li>
+            <li class="cat niños"  ><a href="#">Niños</a></li>
+        </ul>
+
+        <div class="iconos">
+            <li class="icono-perfil">
+            <i class="fa-solid fa-user"></i>
+                <div class="login">
+                    <h5>LOGIN</h5>
+                    <input type="email" placeholder="Usuario" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    <button type="submit">Entrar</button>
+                </div>
+            </li>
+            <li class="icono-lupa"><a href="#"><i class="fa-solid fa-magnifying-glass"></a></i></li>
+        </div>
+    </nav>
+
+    <div class="container-imgp1">
+        <img src="https://wallpapers.com/images/featured/moda-masculina-adasabzf66m607uj.jpg" alt="Hombre Verano">
+    </div>
+    <div class="novs"><h2>Novedades</h2></div>
+    <div class="novedades-cats">
+        <div class="noved1">
+            <a class="anoved1" href="#">
+            </a>
+            <img src="https://images.pexels.com/photos/15654407/pexels-photo-15654407/free-photo-of-empresario-hombre-de-negocios-moda-hombre.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre Formal">
+            <h3>Formal</h3>
+        </div>
+        <div class="noved2"><img src="https://images.pexels.com/photos/15647646/pexels-photo-15647646/free-photo-of-madera-ciudad-paisaje-naturaleza.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre Verano"><h3>Verano</h3></div>
+        <div class="noved3"><img src="https://images.pexels.com/photos/8907530/pexels-photo-8907530.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre Moda de Baño"><h3>Ropa de Baño</h3></div>
+        <div class="noved4"><img src="https://images.pexels.com/photos/32344247/pexels-photo-32344247.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre Fiestero"><h3>Fiesta</h3></div>
+        <div class="noved5"><img src="https://images.pexels.com/photos/9023405/pexels-photo-9023405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre deportivo"><h3>Deportes</h3></div>
+        <div class="noved6"><img src="https://images.pexels.com/photos/18907469/pexels-photo-18907469/free-photo-of-tiro-de-retrato-urbano.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hombre Ropa Frio"><h3>Frío</h3></div>
+    </div>
+    <div class="na"><h2>Lo Mejor</h2></div>
+    <div class="ckpag">
+        <div class="ckpag1">
+            <h2>Calvin Klein</h2>
+            <h3>Los más vendidos</h3>
+            <a href="#">Descubrir →</a>
+        </div>
+        <div class="ckpag2">
+            <img src="https://img01.ztat.net/banner/449ad186fced4083a41ab5e7e0156bcc/83bc3a1a6ce442e8ac0af093ae008093.jpg?imwidth=693" alt="Hombre Calvin Klein">
+        </div>
+    </div>
+    <div class="na2"></div>
+    <div class="lapag">
+        <div class="lapag1">
+            <h2>Lacoste</h2>
+            <h3>Encuentra tus nuevos favoritos</h3>
+            <a href="#">Descubrir →</a>
+        </div>
+        <div class="lapag2">
+            <img src="https://img01.ztat.net/banner/0e0664309af94ac08aca2e83da3042a7/769352c462ba40ab947f36b12384fb07.jpg?imwidth=740" alt="Lacoste">
+        </div>
+    </div>
+
+    <div class="na3"></div>
+    <div class="popag">
+        <div class="popag1">
+            <h2>Polo Ralph Lauren</h2>
+            <h3>Los Hamptons de Ralph</h3>
+            <a href="#">Descubrir →</a>
+        </div>
+        <div class="popag2">
+            <img src="https://img01.ztat.net/crt/creative-content/23f02e20-f0f0-49b1-8756-2d75134b6af7.jpg?imwidth=740" alt="Polo Boy">
+        </div>
+    </div>
+    <div class="na4"></div>
+    <div class="tmpag">
+        <div class="tmpag1">
+            <h2>Tomy Hilfiger</h2>
+            <h3>Lo mejor en estilos</h3>
+            <a href="#">Descubrir →</a>
+        </div>
+        <div class="tmpag2">
+            <img src="https://i.mdel.net/i/db/2017/6/717190/717190-800w.jpg" alt="Tomy Boy">
+        </div>
+    </div>
+    <div class="na5"></div>
+    <div class="hbpag">
+        <div class="hbpag1">
+            <h2>Hugo Boss</h2>
+            <h3>Descubre tu estilo</h3>
+            <a href="#">Descubrir →</a>
+        </div>
+        <div class="hbpag2">
+            <img src="https://i0.wp.com/badhombremagazine.com/wp-content/uploads/2022/03/b4b2bfbf67d4d0b28c2460d4d84f01a8.jpg?resize=685%2C1000&ssl=1" alt="Hugo Boss Boy">
+        </div>
+    </div>
+    
+    <div class="final">
+        <div class="caja recursos">
+            <h4>Recursos</h4>
+            <br>
+                <li><ul><a href="#">Tarjetas de Regalo</a></ul>
+                    <ul><a href="#">Tarjetas de regalo corporativas</a></ul>
+                    <ul><a href="#">Buscar una tienda</a></ul>
+                    <ul><a href="#">Descuento para estudiantes</a></ul>
+                    <ul><a href="#">Comentarios</a></ul>
+                    <ul><a href="#">Códigos promocionales</a></ul>
+                </li>
+            
+        </div>
+        <div class="caja ayuda">
+            <h4>Recursos</h4>
+            <br>
+                <li>
+                    <ul><a href="#">Obtener ayuda</a></ul>
+                    <ul><a href="#">Estado del pedido</a></ul>
+                    <ul><a href="#">Envíos y entregas</a></ul>
+                    <ul><a href="#">Devoluciones</a></ul>
+                    <ul><a href="#">Opciones de pago</a></ul>
+                    <ul><a href="#">Ayuda con los códigos promocionales</a></ul>
+                </li>
+        </div>
+        <div class="caja empresa">
+            <h4>Empresa</h4>
+            <br>
+                <li>
+                    <ul><a href="#">Novedades</a></ul>
+                    <ul><a href="#">Empleo</a></ul>
+                    <ul><a href="#">Inversores</a></ul>
+                    <ul><a href="#">Sostenibilidad</a></ul>
+                    <ul><a href="#">Accesibilidad</a></ul>
+                    <ul><a href="#">Propósito</a></ul>
+                </li>
+        </div>
+        <div class="caja nada"></div>
+    </div>
+</body>
+</html>

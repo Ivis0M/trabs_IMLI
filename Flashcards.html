@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .contenedor-principal {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 550px;
+            text-align: center;
+            margin-bottom: 25px;
+            border: 1px solid #b2ebf2;
+        }
+
+        h1 {
+            color: #00838f;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.15em;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button:hover {
+            background-color: #00acc1;
+        }
+
+        .area-tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            width: 550px;
+        }
+
+        .tarjeta-flash {
+            background-color: #e0f2f7;
+            border: 1px solid #80deea;
+            border-radius: 10px;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            width: 250px;
+            height: 130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease-in-out;
+            transform-style: preserve-3d;
+            font-size: 1.1em;
+            color: #263238;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .tarjeta-flash.girada {
+            transform: rotateY(180deg);
+        }
+
+        .cara-tarjeta {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow: auto;
+        }
+
+        .cara-delantera {
+            background-color: #e0f2f7;
+            z-index: 2;
+        }
+
+        .cara-trasera {
+            transform: rotateY(180deg);
+            background-color: #b2ebf2;
+            z-index: 1;
+        }
+
+        .boton-borrar {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: #ef5350;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .tarjeta-flash:hover .boton-borrar {
+            opacity: 1;
+        }
+
+        .boton-borrar:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <h1>Flashcards</h1>
+        <div>
+            <button id="botonAgregar">Añadir Tarjeta Nueva</button>
+        </div>
+    </div>
+
+    <div class="area-tarjetas" id="areaDeTarjetas"></div>
+
+    <script>
+        const botonAgregar = document.getElementById('botonAgregar');
+        const areaDeTarjetas = document.getElementById('areaDeTarjetas');
+
+        function hacerTarjeta(pregunta, respuesta) {
+            const miTarjeta = document.createElement('div');
+            miTarjeta.classList.add('tarjeta-flash');
+
+            const frente = document.createElement('div');
+            frente.classList.add('cara-tarjeta', 'cara-delantera');
+            frente.innerText = pregunta;
+
+            const vuelta = document.createElement('div');
+            vuelta.classList.add('cara-tarjeta', 'cara-trasera');
+            vuelta.innerText = respuesta;
+
+            const botonBorrar = document.createElement('button');
+            botonBorrar.classList.add('boton-borrar');
+            botonBorrar.innerText = 'X';
+
+            miTarjeta.addEventListener('click', (evento) => {
+
+                if (evento.target !== botonBorrar) {
+                    miTarjeta.classList.toggle('girada');
+                }
+            });
+
+            botonBorrar.addEventListener('click', (evento) => {
+                evento.stopPropagation();
+                areaDeTarjetas.removeChild(miTarjeta);
+            });
+
+            
+            miTarjeta.appendChild(frente);
+            miTarjeta.appendChild(vuelta);
+            miTarjeta.appendChild(botonBorrar);
+
+            return miTarjeta;
+        }
+
+        botonAgregar.addEventListener('click', () => {
+            const textoPregunta = prompt('Escribe tu pregunta aquí:');
+            if (textoPregunta === null || textoPregunta.trim() === '') {
+                alert('¡Ups! Necesitas una pregunta para tu tarjeta.');
+                return;
+            }
+
+            const textoRespuesta = prompt('Ahora, la respuesta:');
+            if (textoRespuesta === null || textoRespuesta.trim() === '') {
+                alert('¡Olvidaste la respuesta! Intenta de nuevo.');
+                return;
+            }
+
+            const nuevaFlashcard = hacerTarjeta(textoPregunta.trim(), textoRespuesta.trim());
+            areaDeTarjetas.appendChild(nuevaFlashcard);
+        });
+    </script>
+</body>
+</html>
